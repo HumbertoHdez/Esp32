@@ -1,0 +1,26 @@
+#include "BluetoothSerial.h" //libreria
+
+BluetoothSerial BT; activar bluetooth
+
+void setup() {
+  BT.begin("EspH"); //asignacion del nombre
+  pinMode(2, OUTPUT);
+  
+
+}      
+
+void loop() {
+  if(BT.available()){ //leer datos de bluetooth
+    char datos = BT.read();
+
+    if(datos == '1'){
+      digitalWrite(2,HIGH);
+      BT.println("Led on");
+    }
+    if(datos == '0'){
+      digitalWrite(2,LOW);
+      BT.println("Led off");
+    }
+  }
+
+}
