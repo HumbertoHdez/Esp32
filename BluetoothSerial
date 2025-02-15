@@ -1,6 +1,6 @@
 #include "BluetoothSerial.h" //libreria
 
-BluetoothSerial BT; activar bluetooth
+BluetoothSerial BT; //activar bluetooth
 
 void setup() {
   BT.begin("EspH"); //asignacion del nombre
