@@ -1,0 +1,11 @@
+import serial //Libreria para puerto serial
+
+try: 
+    BT = serial.Serial('COM8',115200) //Frecuencia y num de puerto
+    print('Conexion')
+except:           
+    print('Error')
+while True:
+    mensaje = input('Valor ') //datos a enviar
+    BT.write(mensaje.encode('utf-8')) //Enviar datos
+    
